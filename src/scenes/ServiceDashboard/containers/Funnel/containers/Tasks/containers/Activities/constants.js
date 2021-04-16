@@ -1,0 +1,1 @@
+export const DEFAULT_ACTIVITIES_LIMIT = 5;

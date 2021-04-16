@@ -1,0 +1,224 @@
+js:console-master:
+  extends:
+    - .js-service
+  variables:
+    APP_NAME: console
+  artifacts:
+    paths:
+      - js/apps/*/build/dist
+    expire_in: 6 hour
+  cache:
+    key: js-console-master
+    policy: pull-push
+    paths:
+      - js/*/*/build
+  tags:
+    - audienzz
+    - medium
+  only:
+    refs:
+      - master
+    changes:
+      - js/.herna/.*
+      - js/typings/.*
+      - js/.eslintrc.js
+      - js/Makefile
+      - js/.babel.config.js
+      - js/jest-wrapper.js
+      - js/lerna.json
+      - js/package.json
+      - js/package-lock.json
+      - js/tsconfig.json
+      - js/x
+      - js/libs/build-tools/.*
+      - etc/js-support/.*
+      - js/libs/use-why-did-you-update/.*
+      - js/libs/scroll-to-error/.*
+      - js/libs/use-click-outside/.*
+      - js/libs/use-previous/.*
+      - js/libs/use-request/.*
+      - js/libs/use-tooltip/.*
+      - js/libs/check/.*
+      - js/libs/is-debug/.*
+      - js/libs/api-generator/.*
+      - js/libs/types/.*
+      - js/libs/api-helpers/.*
+      - js/libs/framework/.*
+      - js/libs/ui/.*
+      - js/api/api-ws-activity/.*
+      - services/ws-activity/src/main/resources/rest-api/ws-activity.yml
+      - js/api/api-ws-adflow/.*
+      - js/api/api-ws-appnexus/.*
+      - services/ws-appnexus/src/main/resources/rest-api/ws-appnexus.yml
+      - js/api/api-ws-appnexus-proxy/.*
+      - services/ws-appnexus-proxy/src/main/resources/rest-api/ws-appnexus-proxy.yml
+      - js/api/api-ws-businessclick-creation/.*
+      - services/ws-businessclick-creation/src/main/resources/rest-api/ws-businessclick-creation.yml
+      - js/api/api-ws-businessclick-v2/.*
+      - services/ws-businessclickv2/src/main/resources/rest-api/ws-businessclick.yml
+      - js/api/api-ws-campaign-reports/.*
+      - services/ws-campaign-reports/src/main/resources/rest-api/ws-campaign-reports.yml
+      - js/api/api-ws-companies/.*
+      - services/ws-companies/src/main/resources/rest-api/ws-companies.yml
+      - js/api/api-ws-contextual/.*
+      - services/ws-contextual/src/main/resources/rest-api/ws-contextual.yml
+      - js/api/api-ws-creatives/.*
+      - services/ws-creatives/src/main/resources/rest-api/ws-creatives.yml
+      - js/api/api-ws-creatives-crawler/.*
+      - services/ws-creatives-crawler/src/main/resources/rest-api/ws-creatives-crawler.yml
+      - js/api/api-ws-credit-card/.*
+      - services/ws-credit-card/src/main/resources/rest-api/ws-credit-card.yml
+      - js/api/api-ws-deals/.*
+      - services/ws-deals/src/main/resources/rest-api/ws-deals.yml
+      - js/api/api-ws-email-sync/.*
+      - services/ws-email-sync/src/main/resources/rest-api/ws-email-sync.yml
+      - js/api/api-ws-funnel/.*
+      - services/ws-funnel/src/main/resources/rest-api/ws-funnel.yml
+      - js/api/api-ws-google/.*
+      - services/ws-google/src/main/resources/rest-api/ws-google.yml
+      - js/api/api-ws-insights/.*
+      - services/ws-insights/src/main/resources/rest-api/ws-insights.yml
+      - js/api/api-ws-invoices/.*
+      - services/ws-invoices/src/main/resources/rest-api/ws-invoices.yml
+      - js/api/api-ws-mail/.*
+      - services/ws-mail/src/main/resources/rest-api/ws-mail.yml
+      - js/api/api-ws-operations/.*
+      - services/ws-operations/src/main/resources/rest-api/ws-operations.yml
+      - js/api/api-ws-pdf-generator/.*
+      - services/ws-pdf-generator/src/main/resources/rest-api/ws-pdf-generator.yml
+      - js/api/api-ws-print/.*
+      - services/ws-print/src/main/resources/rest-api/ws-print.yml
+      - js/api/api-ws-print-operations/.*
+      - services/ws-print-operations/src/main/resources/rest-api/ws-print-operations.yml
+      - js/api/api-ws-salesforce/.*
+      - services/ws-salesforce/src/main/resources/rest-api/ws-salesforce.yml
+      - js/api/api-ws-salesforce-reports/.*
+      - services/ws-salesforce-reports/src/main/resources/rest-api/ws-salesforce-reports.yml
+      - js/api/api-ws-scheduler/.*
+      - services/ws-scheduler/src/main/resources/rest-api/ws-scheduler.yml
+      - js/api/api-ws-screenshots/.*
+      - services/ws-screenshots/src/main/resources/rest-api/ws-screenshots.yml
+      - js/api/api-ws-segments/.*
+      - services/ws-segments/src/main/resources/rest-api/ws-segments.yml
+      - js/api/api-ws-tags/.*
+      - services/ws-tags/src/main/resources/rest-api/ws-tags.yml
+      - js/api/api-ws-traffic/.*
+      - services/ws-traffic/src/main/resources/rest-api/ws-traffic.yml
+      - js/api/api-ws-translate/.*
+      - services/ws-translate/src/main/resources/rest-api/ws-translate.yml
+      - js/api/api-ws-word2vec/.*
+      - services/ws-word2vec/src/main/resources/rest-api/ws-word2vec.yml
+      - js/libs/use-auth/.*
+      - js/apps/console/.*
+js:console-general:
+  extends:
+    - .js-service
+  variables:
+    APP_NAME: console
+  artifacts:
+    paths:
+      - js/apps/*/build/dist
+    expire_in: 6 hour
+  cache:
+    key: js-console-master
+    policy: pull
+    paths:
+      - js/*/*/build
+  tags:
+    - audienzz
+    - medium
+  only:
+    changes:
+      - js/.herna/.*
+      - js/typings/.*
+      - js/.eslintrc.js
+      - js/Makefile
+      - js/.babel.config.js
+      - js/jest-wrapper.js
+      - js/lerna.json
+      - js/package.json
+      - js/package-lock.json
+      - js/tsconfig.json
+      - js/x
+      - js/libs/build-tools/.*
+      - etc/js-support/.*
+      - js/libs/use-why-did-you-update/.*
+      - js/libs/scroll-to-error/.*
+      - js/libs/use-click-outside/.*
+      - js/libs/use-previous/.*
+      - js/libs/use-request/.*
+      - js/libs/use-tooltip/.*
+      - js/libs/check/.*
+      - js/libs/is-debug/.*
+      - js/libs/api-generator/.*
+      - js/libs/types/.*
+      - js/libs/api-helpers/.*
+      - js/libs/framework/.*
+      - js/libs/ui/.*
+      - js/api/api-ws-activity/.*
+      - services/ws-activity/src/main/resources/rest-api/ws-activity.yml
+      - js/api/api-ws-adflow/.*
+      - js/api/api-ws-appnexus/.*
+      - services/ws-appnexus/src/main/resources/rest-api/ws-appnexus.yml
+      - js/api/api-ws-appnexus-proxy/.*
+      - services/ws-appnexus-proxy/src/main/resources/rest-api/ws-appnexus-proxy.yml
+      - js/api/api-ws-businessclick-creation/.*
+      - services/ws-businessclick-creation/src/main/resources/rest-api/ws-businessclick-creation.yml
+      - js/api/api-ws-businessclick-v2/.*
+      - services/ws-businessclickv2/src/main/resources/rest-api/ws-businessclick.yml
+      - js/api/api-ws-campaign-reports/.*
+      - services/ws-campaign-reports/src/main/resources/rest-api/ws-campaign-reports.yml
+      - js/api/api-ws-companies/.*
+      - services/ws-companies/src/main/resources/rest-api/ws-companies.yml
+      - js/api/api-ws-contextual/.*
+      - services/ws-contextual/src/main/resources/rest-api/ws-contextual.yml
+      - js/api/api-ws-creatives/.*
+      - services/ws-creatives/src/main/resources/rest-api/ws-creatives.yml
+      - js/api/api-ws-creatives-crawler/.*
+      - services/ws-creatives-crawler/src/main/resources/rest-api/ws-creatives-crawler.yml
+      - js/api/api-ws-credit-card/.*
+      - services/ws-credit-card/src/main/resources/rest-api/ws-credit-card.yml
+      - js/api/api-ws-deals/.*
+      - services/ws-deals/src/main/resources/rest-api/ws-deals.yml
+      - js/api/api-ws-email-sync/.*
+      - services/ws-email-sync/src/main/resources/rest-api/ws-email-sync.yml
+      - js/api/api-ws-funnel/.*
+      - services/ws-funnel/src/main/resources/rest-api/ws-funnel.yml
+      - js/api/api-ws-google/.*
+      - services/ws-google/src/main/resources/rest-api/ws-google.yml
+      - js/api/api-ws-insights/.*
+      - services/ws-insights/src/main/resources/rest-api/ws-insights.yml
+      - js/api/api-ws-invoices/.*
+      - services/ws-invoices/src/main/resources/rest-api/ws-invoices.yml
+      - js/api/api-ws-mail/.*
+      - services/ws-mail/src/main/resources/rest-api/ws-mail.yml
+      - js/api/api-ws-operations/.*
+      - services/ws-operations/src/main/resources/rest-api/ws-operations.yml
+      - js/api/api-ws-pdf-generator/.*
+      - services/ws-pdf-generator/src/main/resources/rest-api/ws-pdf-generator.yml
+      - js/api/api-ws-print/.*
+      - services/ws-print/src/main/resources/rest-api/ws-print.yml
+      - js/api/api-ws-print-operations/.*
+      - services/ws-print-operations/src/main/resources/rest-api/ws-print-operations.yml
+      - js/api/api-ws-salesforce/.*
+      - services/ws-salesforce/src/main/resources/rest-api/ws-salesforce.yml
+      - js/api/api-ws-salesforce-reports/.*
+      - services/ws-salesforce-reports/src/main/resources/rest-api/ws-salesforce-reports.yml
+      - js/api/api-ws-scheduler/.*
+      - services/ws-scheduler/src/main/resources/rest-api/ws-scheduler.yml
+      - js/api/api-ws-screenshots/.*
+      - services/ws-screenshots/src/main/resources/rest-api/ws-screenshots.yml
+      - js/api/api-ws-segments/.*
+      - services/ws-segments/src/main/resources/rest-api/ws-segments.yml
+      - js/api/api-ws-tags/.*
+      - services/ws-tags/src/main/resources/rest-api/ws-tags.yml
+      - js/api/api-ws-traffic/.*
+      - services/ws-traffic/src/main/resources/rest-api/ws-traffic.yml
+      - js/api/api-ws-translate/.*
+      - services/ws-translate/src/main/resources/rest-api/ws-translate.yml
+      - js/api/api-ws-word2vec/.*
+      - services/ws-word2vec/src/main/resources/rest-api/ws-word2vec.yml
+      - js/libs/use-auth/.*
+      - js/apps/console/.*
+  except:
+    - master

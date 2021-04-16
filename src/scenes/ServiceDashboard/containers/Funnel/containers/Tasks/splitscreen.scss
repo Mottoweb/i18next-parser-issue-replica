@@ -1,0 +1,12 @@
+.splitscreen-table {
+  & .table-container {
+    position: relative;
+    margin-top: 64px;
+
+    & thead {
+      position: absolute;
+      margin-top: -34px;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+.email-content {
+  img, table {
+    max-width: 100%;
+  }
+  blockquote, div, p, a {
+    word-break: break-all;
+  }
+}

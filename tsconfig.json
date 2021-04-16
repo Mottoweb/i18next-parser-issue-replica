@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig",
+  "include": ["src"],
+  "compilerOptions": {
+    "noEmit": true,
+    "typeRoots" : ["../../typings", "../../node_modules/@types", "../../node_modules/@adnz"],
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "include": [
+    "**/*"
+  ],
+  "exclude": [
+    "build/**",
+    "node_modules/**",
+    "coverage/**",
+    "src/api/**"
+  ]
+}

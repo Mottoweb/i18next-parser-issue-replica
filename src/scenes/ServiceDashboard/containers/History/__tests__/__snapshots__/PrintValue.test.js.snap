@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrintValue component should print classifiedsSalesContact value 1`] = `
+<span>
+  Matthias Mahler
+</span>
+`;
+
+exports[`PrintValue component should print dash 1`] = `
+<span>
+  –
+</span>
+`;
+
+exports[`PrintValue component should print ownerContact value 1`] = `
+<span>
+  Janine Bieri
+</span>
+`;
+
+exports[`PrintValue component should print sequence 1`] = `
+<span>
+  ADVERTISER, AGENCY, PUBLISHER
+</span>
+`;
+
+exports[`PrintValue component should print value 1`] = `
+<span>
+  Foo bar
+</span>
+`;
